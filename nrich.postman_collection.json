@@ -16,7 +16,7 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.environment.set(\"ownerName\", pm.response.json().body.ownerName);\n\n// pm.collectionVariables.set(\"dipaliMobile\", pm.response.json().body.mobileNumber);\n\npm.globals.set(\"instituteId\", pm.response.json().body.instituteId);\n\nlet a = pm.response.json().body.instituteName;\n\nconsole.log(a);\n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response time is less than 1000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(50);\n});\n\npm.test(\"Response size is less than 10 KB\", function () {\n    pm.expect(pm.response.responseSize).to.be.below(4 * 1024);\n});"
+              "pm.environment.set(\"ownerName\", pm.response.json().body.ownerName);\n\n// pm.collectionVariables.set(\"dipaliMobile\", pm.response.json().body.mobileNumber);\n\npm.globals.set(\"instituteId\", pm.response.json().body.instituteId);\n\nlet a = pm.response.json().body.instituteName;\n\nconsole.log(a);\n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response time is less than 1000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(1000);\n});\n\npm.test(\"Response size is less than 10 KB\", function () {\n    pm.expect(pm.response.responseSize).to.be.below(4 * 1024);\n});"
             ]
           }
         },
