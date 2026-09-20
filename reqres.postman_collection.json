@@ -1,0 +1,64 @@
+{
+  "info": {
+    "_postman_id": "f538f25b-ec89-489c-8eaf-b7c4f4d1b1df",
+    "name": "reqres",
+    "description": "Hello World",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "29956047",
+    "_collection_link": "https://go.postman.co/collection/29956047-f538f25b-ec89-489c-8eaf-b7c4f4d1b1df?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "users",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://reqres.in/api/users?page=2",
+          "protocol": "https",
+          "host": [
+            "reqres",
+            "in"
+          ],
+          "path": [
+            "api",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "userApi",
+      "value": "users/v2/api"
+    },
+    {
+      "key": "dipaliMobile",
+      "value": ""
+    },
+    {
+      "key": "num",
+      "value": ""
+    },
+    {
+      "key": "num1",
+      "value": ""
+    },
+    {
+      "key": "num2",
+      "value": ""
+    },
+    {
+      "key": "num3",
+      "value": ""
+    }
+  ]
+}

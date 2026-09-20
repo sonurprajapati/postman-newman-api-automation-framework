@@ -1,0 +1,32 @@
+name: API Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Newman
+        run: npm install -g newman
+
+      - name: Run Postman API Tests
+        env:
+          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+        run: |
+          newman run postman/nrich.postman_collection.json \
+            -e postman/dev_nrich.postman_environment.json \
+            -g postman/QB_APIs.postman_globals.json \
+            --env-var "auth=$AUTH_TOKEN"
