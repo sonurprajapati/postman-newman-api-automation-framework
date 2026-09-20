@@ -27,7 +27,7 @@ jobs:
           NRICHAUTH: ${{ secrets.NRICHAUTH }}
         run: |
           # newman run reqres.postman_collection.json --env-var "auth=$PAGEVALUE"
-          newman run postman/nrich.postman_collection.json \
-            -e postman/dev_nrich.postman_environment.json \
-            -g postman/QB_APIs.postman_globals.json \
+          newman run nrich.postman_collection.json \
+            -e dev_nrich.postman_environment.json \
+            -g QB_APIs.postman_globals.json \
             --env-var "auth=$NRICHAUTH"
