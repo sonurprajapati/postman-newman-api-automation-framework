@@ -24,7 +24,7 @@ jobs:
 
       - name: Run Postman API Tests
         env:
-          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+          PAGEVALUE: ${{ secrets.PAGEVALUE }}
         run: |
           newman run reqres.postman_collection.json --env-var "pageVal=$PAGEVALUE"
           # newman run postman/nrich.postman_collection.json \
