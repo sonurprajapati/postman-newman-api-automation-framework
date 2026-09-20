@@ -10,6 +10,17 @@
   "item": [
     {
       "name": "users",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "console.log(pm.response.text());"
+            ]
+          }
+        }
+      ],
       "request": {
         "method": "GET",
         "header": [],
