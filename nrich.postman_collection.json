@@ -126,7 +126,7 @@
           }
         ],
         "url": {
-          "raw": "{{baseUrl}}/{{userApi}}/{{getInstituteDetails}}?instituteId=14",
+          "raw": "{{baseUrl}}/{{userApi}}/{{getInstituteDetails}}?instituteId=60",
           "host": [
             "{{baseUrl}}"
           ],
