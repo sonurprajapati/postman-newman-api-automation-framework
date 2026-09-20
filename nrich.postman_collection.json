@@ -1,0 +1,267 @@
+{
+  "info": {
+    "_postman_id": "cee7f09e-d2af-47c0-b92a-b8d979414b9a",
+    "name": "nrich",
+    "description": "Hello World",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "29956047",
+    "_collection_link": "https://go.postman.co/collection/29956047-cee7f09e-d2af-47c0-b92a-b8d979414b9a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "getInstituteDetails",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.environment.set(\"ownerName\", pm.response.json().body.ownerName);\n\n// pm.collectionVariables.set(\"dipaliMobile\", pm.response.json().body.mobileNumber);\n\npm.globals.set(\"instituteId\", pm.response.json().body.instituteId);\n\nlet a = pm.response.json().body.instituteName;\n\nconsole.log(a);\n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response time is less than 1000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(50);\n});\n\npm.test(\"Response size is less than 10 KB\", function () {\n    pm.expect(pm.response.responseSize).to.be.below(4 * 1024);\n});"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "let num = Math.floor(Math.random() * 100);\n\nconsole.log(num);\n\npm.collectionVariables.set(\"num3\", num);\n\n// pm.globals.set(\"instituteId\", \"getInstituteDetails\");\n"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9,hi;q=0.8",
+            "disabled": true
+          },
+          {
+            "key": "Authorization",
+            "value": "{{auth}}"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive",
+            "disabled": true
+          },
+          {
+            "key": "Cross-Origin-Embedder-Policy",
+            "value": "require-corp",
+            "disabled": true
+          },
+          {
+            "key": "Cross-Origin-Opener-Policy",
+            "value": "same-origin",
+            "disabled": true
+          },
+          {
+            "key": "DNT",
+            "value": "1",
+            "disabled": true
+          },
+          {
+            "key": "Origin",
+            "value": "https://lms.nrichlearning.in",
+            "disabled": true
+          },
+          {
+            "key": "Referer",
+            "value": "https://lms.nrichlearning.in/",
+            "disabled": true
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty",
+            "disabled": true
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors",
+            "disabled": true
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "cross-site",
+            "disabled": true
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "disabled": true
+          },
+          {
+            "key": "instituteId",
+            "value": "1",
+            "disabled": true
+          },
+          {
+            "key": "loginToken",
+            "value": "ae24eb48-945a-43e0-8fbb-eb437fcfcd67",
+            "disabled": true
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "disabled": true
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0",
+            "disabled": true
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\"",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/{{userApi}}/{{getInstituteDetails}}?instituteId=14",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "{{userApi}}",
+            "{{getInstituteDetails}}"
+          ],
+          "query": [
+            {
+              "key": "instituteId",
+              "value": "14"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getUserInstitutes",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9,hi;q=0.8"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{auth}}"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Cross-Origin-Embedder-Policy",
+            "value": "require-corp"
+          },
+          {
+            "key": "Cross-Origin-Opener-Policy",
+            "value": "same-origin"
+          },
+          {
+            "key": "DNT",
+            "value": "1"
+          },
+          {
+            "key": "Origin",
+            "value": "https://lms.nrichlearning.in"
+          },
+          {
+            "key": "Referer",
+            "value": "https://lms.nrichlearning.in/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "cross-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "instituteId",
+            "value": "1"
+          },
+          {
+            "key": "loginToken",
+            "value": "ae24eb48-945a-43e0-8fbb-eb437fcfcd67"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "url": {
+          "raw": "https://devapi.aneesschool.edu.in/users/v2/api/getUserInstitutes",
+          "protocol": "https",
+          "host": [
+            "devapi",
+            "aneesschool",
+            "edu",
+            "in"
+          ],
+          "path": [
+            "users",
+            "v2",
+            "api",
+            "getUserInstitutes"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "userApi",
+      "value": "users/v2/api"
+    },
+    {
+      "key": "num",
+      "value": ""
+    },
+    {
+      "key": "num1",
+      "value": ""
+    },
+    {
+      "key": "num2",
+      "value": ""
+    },
+    {
+      "key": "num3",
+      "value": ""
+    }
+  ]
+}

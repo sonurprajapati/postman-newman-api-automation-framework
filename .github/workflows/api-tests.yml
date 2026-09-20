@@ -24,10 +24,10 @@ jobs:
 
       - name: Run Postman API Tests
         env:
-          PAGEVALUE: ${{ secrets.PAGEVALUE }}
+          NRICHAUTH: ${{ secrets.NRICHAUTH }}
         run: |
-          newman run reqres.postman_collection.json --env-var "pageVal=$PAGEVALUE"
-          # newman run postman/nrich.postman_collection.json \
-          #   -e postman/dev_nrich.postman_environment.json \
-          #   -g postman/QB_APIs.postman_globals.json \
-          #   --env-var "auth=$AUTH_TOKEN"
+          # newman run reqres.postman_collection.json --env-var "auth=$PAGEVALUE"
+          newman run postman/nrich.postman_collection.json \
+            -e postman/dev_nrich.postman_environment.json \
+            -g postman/QB_APIs.postman_globals.json \
+            --env-var "auth=$NRICHAUTH"
