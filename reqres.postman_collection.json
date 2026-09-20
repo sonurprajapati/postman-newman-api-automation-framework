@@ -14,7 +14,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "https://reqres.in/api/users?page=2",
+          "raw": "https://reqres.in/api/users?page={{pageVal}}",
           "protocol": "https",
           "host": [
             "reqres",
@@ -27,7 +27,7 @@
           "query": [
             {
               "key": "page",
-              "value": "1"
+              "value": "{{pageVal}}"
             }
           ]
         }
@@ -37,27 +37,7 @@
   ],
   "variable": [
     {
-      "key": "userApi",
-      "value": "users/v2/api"
-    },
-    {
-      "key": "dipaliMobile",
-      "value": ""
-    },
-    {
-      "key": "num",
-      "value": ""
-    },
-    {
-      "key": "num1",
-      "value": ""
-    },
-    {
-      "key": "num2",
-      "value": ""
-    },
-    {
-      "key": "num3",
+      "key": "pageVal",
       "value": ""
     }
   ]

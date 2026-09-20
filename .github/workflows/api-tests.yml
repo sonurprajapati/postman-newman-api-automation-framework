@@ -26,7 +26,7 @@ jobs:
         env:
           AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
         run: |
-          newman run reqres.postman_collection.json
+          newman run reqres.postman_collection.json --env-var "pageVal=$PAGEVALUE"
           # newman run postman/nrich.postman_collection.json \
           #   -e postman/dev_nrich.postman_environment.json \
           #   -g postman/QB_APIs.postman_globals.json \
